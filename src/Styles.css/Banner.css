@@ -1,0 +1,60 @@
+.banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    place-items: center;
+    padding: 100px 0;
+}
+/* .banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.banner-content h1{
+  font-family: 'Dela Gothic One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 62px;
+  letter-spacing: 4px;
+  color: var(--sub-primary-color);
+}
+.banner-content h6{
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 26px;
+  color: var(--subText-primary-color);
+  padding: 6px 0 ;
+}
+.banner-content p{
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--subText-primary-color);
+  padding: 18px 0 !important;
+}
+
+.discovered-button {
+  font-family: 'Inter' ;
+  margin: 12px 0 0 0;
+  font-style: normal;
+  border: 0;
+  outline: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--text-primary-color);
+  padding:12px 33px;
+  background: var(--primary-color);
+  transition: all .4s linear 0s;
+}
+.discovered-button:hover {
+  color: var(--primary-color);
+  background: var(--text-primary-color);
+}

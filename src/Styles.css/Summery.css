@@ -1,0 +1,43 @@
+.summery-container {
+  background-color: var(--text-primary-color);
+  padding: 50px;
+}
+
+.summery-heading h1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 65px;
+  letter-spacing: 0px;
+  color: rgb(230, 230, 230);
+  text-align: center;
+}
+.summery-heading p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgb(230, 230, 230);
+  text-align: center;
+}
+.summery-content h1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 62px;
+  color: var(--primary-color);
+  text-align: center;
+}
+.summery-content h6 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 30px;
+  color: rgb(230, 230, 230);
+  text-align: center;
+}

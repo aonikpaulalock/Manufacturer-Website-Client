@@ -1,0 +1,52 @@
+.reviews-content h1 {
+  font-family: 'Dela Gothic One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 55px;
+  letter-spacing: 5px;
+  color: var(--sub-primary-color);
+  text-align: center;
+}
+
+.reviews-content h5 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--subText-primary-color);
+  text-align: center;
+}
+
+.review-container {
+  margin: 40px 0;
+  width: 100%;
+  border-bottom: 4px solid var(--primary-color);
+}
+
+.review-image {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  margin-top: -35px;
+}
+
+.review-name {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 45px;
+  color: var(--text-primary-color);
+  text-align: center;
+}
+.review-des {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--subText-primary-color);
+}

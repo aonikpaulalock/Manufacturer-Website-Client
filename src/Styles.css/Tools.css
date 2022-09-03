@@ -1,0 +1,45 @@
+.parts-heading h1 {
+  font-family: 'Dela Gothic One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 37px;
+  line-height: 55px;
+  letter-spacing: 3px;
+  color: var(--sub-primary-color);
+  text-align: center;
+}
+.parts-heading p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: var(--subText-primary-color);
+  padding: 9px 0 ;
+  text-align: center;
+}
+.card-content h1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 35px;
+  color: var(--sub-primary-color);
+  padding: 8px 0;
+}
+.card-content p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: var(--subText-primary-color);
+}
+.tools-head {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 48px;
+  color: var(--text-primary-color);
+}

@@ -1,0 +1,49 @@
+.why-choose-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.why-choose-content h1 {
+  font-family: 'Dela Gothic One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 37px;
+  line-height: 55px;
+  letter-spacing: 3px;
+  color: var(--sub-primary-color);
+}
+.why-choose-content h6 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 34px;
+  color: var(--sub-primary-color);
+  padding: 8px 0 ;
+}
+.why-choose-content p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: var(--subText-primary-color);
+  padding: 9px 0 ;
+}
+.about-content h1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 34px;
+  color: var(--sub-primary-color);
+}
+.about-content p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--subText-primary-color);
+}
+

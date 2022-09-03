@@ -1,0 +1,135 @@
+.signup-content h1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 1px;
+  color: var(--sub-primary-color);
+  text-align: center;
+}
+
+.social-login h6 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  color: var(--sub-primary-color);
+  padding: 10px 0 15px 0;
+  text-align: center;
+}
+
+.facebook-icons {
+  background-color: rgb(66 103 178);
+}
+
+.google-icons {
+  background-color: #DB4437;
+}
+
+.github-icons {
+  background-color: var(--text-primary-color);
+}
+
+.fb-icon {
+  color: #fff;
+}
+
+.git-icon {
+  color: #fff;
+}
+
+.g-icon {
+  color: #fff;
+}
+
+.facebook-icons,
+.google-icons,
+.github-icons {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.fb-icon,
+.git-icon,
+.g-icon {
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+.input-feild {
+  width: 85%;
+  padding: 25px 50px;
+  border: .1rem solid var(--subText-primary-color);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.input-feild:focus {
+  outline: none;
+}
+
+.form-control {
+  position: relative;
+}
+
+.position-name,
+.position-email,
+.position-password {
+  color: rgb(151, 151, 151);
+  font-size: 27px;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+
+.signup-button {
+  width: 100%;
+  font-family: 'Inter';
+  margin: 12px 0 0 0;
+  font-style: normal;
+  border: 0;
+  outline: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--text-primary-color);
+  padding: 15px 33px;
+  background: var(--primary-color);
+  transition: all .4s linear 0s;
+  border-radius: 5px;
+}
+
+.signup-button:hover {
+  color: var(--primary-color);
+  background: var(--text-primary-color);
+}
+
+.acount {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 34px;
+  text-align: center;
+  margin: 15px 0;
+  color: var(--text-primary-color);
+}
+
+.link-color {
+  color: rgb(66 103 178);
+}

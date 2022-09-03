@@ -1,0 +1,23 @@
+.anchor-links {
+  font-family: 'Inter' !important;
+  font-style: normal !important;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: var(--text-primary-color) !important;
+  padding: 20px 18px !important;
+  text-decoration: none !important;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.brand-heading {
+  font-family: 'Dela Gothic One';
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 4px;
+  padding: 0px 0 !important;
+  color: var(--subText-primary-color) !important;
+}
