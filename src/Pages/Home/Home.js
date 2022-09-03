@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '../Shared/Loading';
 import Banner from './Banner';
 import Clients from './Clients';
 import Project from './Project';

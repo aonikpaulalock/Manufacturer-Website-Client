@@ -1,8 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../../Styles.css/Tools.css"
 const Tool = ({ tools }) => {
-  console.log(tools);
-  const { img, description, name, price } = tools;
+  const { _id, img, description, name, price } = tools;
+  const navigate = useNavigate()
   return (
     <div className="rounded shadow-lg">
       <div className="w-full p-4 ">
@@ -11,7 +12,7 @@ const Tool = ({ tools }) => {
         </div>
         <div className="card-content">
           <h1>{name}</h1>
-          <p>{description.slice(0,73)}</p>
+          <p>{description.slice(0, 73)}</p>
           <div className="flex justify-between">
             <h6 className="tools-head flex items-center py-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fcca03" class="w-8 h-8 mr-2">
@@ -19,12 +20,10 @@ const Tool = ({ tools }) => {
               </svg>
               {price}</h6>
           </div>
-          <button className="discovered-button">Book now</button>
+          <button className="discovered-button" onClick={() => navigate(`/tools/${_id}`)}>Order-Now</button>
         </div>
       </div>
     </div>
-
-
   );
 };
 

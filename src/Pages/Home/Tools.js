@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
+// import useTools from '../../Hooks/useTools';
 import Tool from './Tool';
 
 const Tools = () => {
+  // const [tools] = useTools()
   const [tools, setTools] = useState([])
   useEffect(() => {
-    fetch("Service.json")
+    fetch("http://localhost:4000/tools")
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setTools(data)
       })
   }, [])
@@ -20,7 +21,7 @@ const Tools = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         {
           tools.slice(0, 6).map(tool => <Tool
-            key={tool.id}
+            key={tool._id}
             tools={tool}
           >
           </Tool>)
