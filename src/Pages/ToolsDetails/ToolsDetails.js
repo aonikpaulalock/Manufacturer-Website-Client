@@ -40,7 +40,7 @@ const ToolsDetails = () => {
       })
   }
   return (
-    <div className="container mx-auto mt-12 mb-10">
+    <div className="container mx-auto my-14">
       <div className="parts-heading my-4">
         <h1>Order Details</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab ad neque! Eaque, officiis tempora.</p>
@@ -54,7 +54,7 @@ const ToolsDetails = () => {
             <div className="card-content">
               <h1>{details.name}</h1>
               <p>{details.description}</p>
-              <div className="flex items-center justify-between  font-medium">
+              <div className="sm:flex sm:items-center sm:justify-between  font-medium">
                 <h3 className="flex items-center">Minimum-Quantity :
                   <h1 className="ml-2">{details.minimumOrderQuantity}</h1>
                 </h3>

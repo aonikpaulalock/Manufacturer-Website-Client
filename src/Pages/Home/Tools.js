@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react';
-// import useTools from '../../Hooks/useTools';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 import Tool from './Tool';
 
 const Tools = () => {
-  // const [tools] = useTools()
   const [tools, setTools] = useState([])
-  useEffect(() => {
-    fetch("http://localhost:4000/tools")
-      .then(res => res.json())
-      .then(data => {
-        setTools(data)
-      })
-  }, [])
+  const { data, isLoading } = useQuery('/tools', () =>
+    axios.get("http://localhost:4000/tools").then(response => {
+      setTools(response.data)
+    })
+  )
+  if (isLoading) {
+    return <Loading />
+  }
   return (
     <div className="container mx-auto px-10 my-16 py-14">
       <div className="parts-heading my-3">

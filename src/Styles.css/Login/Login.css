@@ -81,6 +81,9 @@
 .input-feild:focus {
   outline: none;
 }
+.input-feild-2 {
+  width: 92%
+}
 
 .form-control {
   position: relative;
