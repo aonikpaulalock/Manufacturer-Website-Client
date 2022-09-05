@@ -77,7 +77,13 @@
   margin: 10px auto;
   border-radius: 5px;
 }
-
+.input-3 {
+  margin-right: 10px !important;
+  padding: 25px 40px;
+}
+.input-4 {
+  padding: 25px 40px;
+}
 .input-feild:focus {
   outline: none;
 }
@@ -95,7 +101,7 @@
   color: rgb(151, 151, 151);
   font-size: 26px;
   position: absolute;
-  top: 31%;
+  top: 35%;
   left: 10%;
 }
 

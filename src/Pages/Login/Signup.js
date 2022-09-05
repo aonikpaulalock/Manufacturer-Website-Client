@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import auth from '../../Firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading';
+import useToken from '../../Hooks/useToken';
 const Signup = () => {
 
   const navigate = useNavigate()
@@ -24,6 +25,7 @@ const Signup = () => {
   const [updateProfile, updating, upError] = useUpdateProfile(auth);
   // React-Hooks Forms
   const { register, formState: { errors }, handleSubmit } = useForm();
+  const [token] = useToken(googleUser || createUser)
 
   // Handle Firebase Error 
   let errorFirebase;
@@ -82,7 +84,7 @@ const Signup = () => {
                   })}
               />
               <Icon className="position-name" icon="carbon:user-online" />
-              <label class="label">
+              <label class="text-center text-lg">
                 {errors.name?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.name?.message}</span>}
               </label>
             </div>
@@ -104,7 +106,7 @@ const Signup = () => {
                   })}
               />
               <Icon className="position-email" icon="clarity:email-outline-alerted" />
-              <label class="text-center">
+              <label class="text-center text-lg">
                 {errors.email?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
                 {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
               </label>
@@ -127,11 +129,11 @@ const Signup = () => {
                   })}
               />
               <Icon className="position-password" icon="ri:lock-password-fill" />
-              <label class="text-center">
+              <label class="text-center text-lg">
                 {errors.password?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
                 {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
               </label>
-              <h6 className="text-center font-medium">{errorFirebase}</h6>
+              <h6 className="text-center font-medium ">{errorFirebase}</h6>
             </div>
             <div className="mx-auto w-10/12 mt-6">
               <button type="submit"

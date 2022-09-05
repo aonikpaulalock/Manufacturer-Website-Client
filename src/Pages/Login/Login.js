@@ -1,10 +1,47 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import image from "../../Asset/Login/login.png"
+import auth from '../../Firebase.init';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import useToken from '../../Hooks/useToken';
+import Loading from '../Shared/Loading';
 const Login = () => {
   const { register, formState: { errors }, handleSubmit } = useForm();
+  const navigate = useNavigate()
+  const location = useLocation()
+  let from = location.state?.from?.pathname || "/";
+  // Google Provider
+
+  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+  // Email Password Authentication
+  const [signInWithEmailAndPassword, signUser, signLoading, signError,
+  ] = useSignInWithEmailAndPassword(auth);
+
+  const [token] = useToken(googleUser || signUser)
+
+  // Handle Firebase Error 
+  if (googleUser || signUser) {
+    navigate(from, { replace: true });
+  }
+  // useEffect(() => {
+  // }, [token, navigate, from])
+
+  let errorFirebase;
+  if (googleError || signError) {
+    errorFirebase = <span className="text-semibold text-red-400">{googleError?.message || signError?.message}</span>
+  }
+
+  if (googleLoading || signLoading) {
+    return <Loading />
+  }
+
+  const onSubmit = data => {
+    signInWithEmailAndPassword(data.email, data.password)
+    // console.log(data)
+  };
   return (
     <div className="container mx-auto my-10  px-8">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
@@ -12,7 +49,7 @@ const Login = () => {
           <img src={image} alt="" />
         </div>
         <div className="signup-content">
-          <h1>Signup Your Account</h1>
+          <h1>Signin Your Account</h1>
           <div className="social-login">
             <h6>Signup Using Social Networking</h6>
             <div className="social-networking flex items-center justify-center">
@@ -28,7 +65,7 @@ const Login = () => {
             </div>
           </div>
           <div class="divider mt-8 md:px-16">OR</div>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div class="form-control">
               <input type="email"
                 autoComplete='off'
@@ -47,10 +84,10 @@ const Login = () => {
                   })}
               />
               <Icon className="position-email" icon="clarity:email-outline-alerted" />
-              {/* <label class="label">
-              {errors.email?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
-              {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
-            </label> */}
+              <label class="text-center text-lg">
+                {errors.email?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
+                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
+              </label>
             </div>
             <div class="form-control">
               <input type="password"
@@ -70,14 +107,14 @@ const Login = () => {
                   })}
               />
               <Icon className="position-password" icon="ri:lock-password-fill" />
-              {/* <label class="label">
-              {errors.password?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
-              {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
-            </label>
-            {errorFirebase} */}
+              <label class="text-center text-lg">
+                {errors.password?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
+                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
+              </label>
+              <h6 className="text-center font-medium">{errorFirebase}</h6>
             </div>
             <div className="mx-auto w-10/12 mt-6">
-              <button type="submit" class="signup-button flex justify-center items-center">Signup</button>
+              <button type="submit" class="signup-button flex justify-center items-center">Signin</button>
               <p className="text-center font-medium mt-3 cursor-pointer text-md">Forget Password ?</p>
               <p className="acount"> Register Your Account ? <Link className='link-color' to="/signup">Please Signup</Link></p>
             </div>

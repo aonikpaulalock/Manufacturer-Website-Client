@@ -1,14 +1,13 @@
-/* .table :where(thead, tfoot) :where(th, td) {
-  background-color: transparent  !important;
-}
-.table :where(tbody th, tbody td) {
-  background-color: transparent  !important;
-} */
 .delete {
   font-size: 30px;
   color: rgb(248, 110, 110);
   cursor: pointer;
   margin-right: 8px;
+}
+.admin {
+  font-size: 35px;
+  color: rgb(0, 181, 187);
+  cursor: pointer;
 }
 .pay {
   font-size: 30px;

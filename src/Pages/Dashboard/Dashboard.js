@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-
+import useAdmin from '../../Hooks/useAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase.init';
 const Dashboard = () => {
+  const [user] = useAuthState(auth)
+  const [admin] = useAdmin(user)
   return (
     <div class="drawer drawer-mobile mt-0 ">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -14,6 +18,8 @@ const Dashboard = () => {
       <div class="drawer-side ">
         <label for="my-drawer-2" class="drawer-overlay"></label>
         <ul class="menu p-8 overflow-y-auto bg-[#292929] text-base-content">
+          {
+            !admin &&
             <>
               <li>
                 <Link to="/dashboard">
@@ -29,6 +35,10 @@ const Dashboard = () => {
                   <span class="whitespace-nowrap font-bold text-[#fcca03] font-['Inter']">Add A Review</span>
                 </Link>
               </li>
+            </>
+          }
+          {
+            (user || admin) &&
             <li>
               <Link to="/dashboard/profile">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#fcca03" stroke-width="2">
@@ -37,17 +47,21 @@ const Dashboard = () => {
                 <span class="whitespace-nowrap font-bold text-[#fcca03] font-['Inter']">My Profile</span>
               </Link>
             </li>
+          }
+          {
+            admin &&
+            <>
               <li>
                 <Link to="/dashboard/users" class="text-base font-normal">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 20 20" fill="#fcca03">
                     <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
                   </svg>
-                  <span class="whitespace-nowrap font-bold text-[#fcca03] font-['Inter']">Make Admin</span>
+                  <span class="whitespace-nowrap font-bold text-[#fcca03] font-['Inter']">All Users</span>
                 </Link>
               </li>
 
               <li>
-                <Link to="/dashboard/addProduct" class="text-base font-normal">
+                <Link to="/dashboard/add" class="text-base font-normal">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#fcca03" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                   </svg>
@@ -72,6 +86,7 @@ const Dashboard = () => {
                 </Link>
               </li>
             </>
+          }
         </ul>
 
       </div>

@@ -16,7 +16,7 @@ const Header = () => {
     <>
       <li><Link to="/" className="anchor-links">Home</Link></li>
       <li><Link to="/blogs" className="anchor-links">Blogs</Link></li>
-      <li><Link to="/myPortpolio" className="anchor-links">My Portfolio</Link></li>
+      <li><Link to="/portfolio" className="anchor-links">My Portfolio</Link></li>
       {
         !user ?
           <li><Link to="/signup" className="anchor-links">Signup</Link></li>

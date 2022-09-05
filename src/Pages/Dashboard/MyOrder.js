@@ -3,22 +3,25 @@ import { Icon } from '@iconify/react';
 import "../../Styles.css/Dashboard/MyOrder.css"
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase.init';
 const MyOrder = () => {
+  const [user] = useAuthState(auth)
   const [orders, setOrders] = useState([])
   useEffect(() => {
-    fetch("http://localhost:4000/order")
+    fetch(`http://localhost:4000/order?email=${user.email}`)
       .then(res => res.json())
       .then(data => setOrders(data))
   }, [])
   const handleDelete = async (id) => {
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: 'Are you sure deleted item ?',
+      text: "You won't be able to revert this !",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Delete'
+      confirmButtonText: 'Yes, Delete it'
     }).then((result) => {
       if (result.isConfirmed) {
         const url = `http://localhost:4000/order/${id}`
@@ -31,7 +34,7 @@ const MyOrder = () => {
         Swal.fire(
           'Deleted!',
           'Your file has been deleted.',
-          'success'
+          'Success'
         )
       }
     })
