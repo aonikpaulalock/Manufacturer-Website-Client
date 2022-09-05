@@ -4,6 +4,7 @@ import brand from "../../Asset/Banner/a885abbb-512d-43f8-8e95-c0cfdab10545.png"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useLocation } from 'react-router-dom';
 import "../../Styles.css/Header.css"
+import { Icon } from '@iconify/react';
 import auth from '../../Firebase.init';
 const Header = () => {
   const { pathname } = useLocation()
@@ -16,20 +17,25 @@ const Header = () => {
     <>
       <li><Link to="/" className="anchor-links">Home</Link></li>
       <li><Link to="/blogs" className="anchor-links">Blogs</Link></li>
-      <li><Link to="/portfolio" className="anchor-links">My Portfolio</Link></li>
       {
         !user ?
           <li><Link to="/signup" className="anchor-links">Signup</Link></li>
           :
           <>
             <li><Link to="/dashboard" className="anchor-links">Dashboard</Link></li>
-            <li><Link to="/signup" className="anchor-links" onClick={logout}>Logout</Link></li>
+            <>
+              <li>
+                <Link to="/signup" className="anchor-links" onClick={logout}>
+                <Icon icon="icon-park-outline:logout" className="logout" />
+                </Link>
+              </li>
+            </>
           </>
       }
     </>
 
   return (
-    <div className="container mx-auto px-10 py-2a">
+    <div className="container mx-auto md:px-10 px-4 py-2a">
       <div class="navbar">
         <div class="navbar-start">
           <div class="dropdown">

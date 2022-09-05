@@ -58,12 +58,12 @@ const Footer = () => {
       </div>
       <hr className="footer-hr" />
       <div className="container mx-auto pt-6">
-        <div className="flex lg:justify-evenly items-center ">
-          <h6 className="copyright-heading">© Copyright 2022. All right reserved.</h6>
-          <Link to="" class="flex items-center">
+        <div className="md:flex md:justify-evenly md:items-center">
+          <Link to="" class="flex items-center md:order-2 order-1">
             <img src={brand} alt="" className="w-16 h-16 mr-1" />
             <h1 className="brand-heading footer-brand">ENERGY</h1>
           </Link>
+          <h6 className="copyright-heading md:order-1 order-2">© Copyright 2022. All right reserved.</h6>
         </div>
       </div>
     </div>

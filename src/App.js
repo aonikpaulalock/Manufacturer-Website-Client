@@ -8,6 +8,8 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import ManageOrder from './Pages/Dashboard/ManageOrder';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/Home/Home';
@@ -33,6 +35,8 @@ function App() {
           <Route path="profile" element={<MyProfile />}></Route>
           <Route path="users" element={<AllUsers />}></Route>
           <Route path="add" element={<AddProduct />}></Route>
+          <Route path="products" element={<ManageProducts />}></Route>
+          <Route path="orders" element={<ManageOrder />}></Route>
         </Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>

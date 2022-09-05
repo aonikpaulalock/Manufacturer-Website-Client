@@ -1,22 +1,23 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import image from "../../Asset/Reviews/add.png"
 const AddProduct = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const onSubmit = data => {
-    // const url = "http://localhost:4000/review";
-    // fetch(url, {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json"
-    //   },
-    //   body: JSON.stringify(data)
-    // })
-    //   .then(res => res.json())
-    //   .then(result => {
-    //     toast.success("Thank you your valuable feedback")
-    //     reset()
-    //   })
+    const url = "http://localhost:4000/tools";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .then(result => {
+        toast.success("Product added successfully")
+        reset()
+      })
   }
   return (
     <div className="container mx-auto px-4">
@@ -50,7 +51,7 @@ const AddProduct = () => {
             <div className="flex w-11/12 ">
               <input
                 className='input-feild shadow-md input-3'
-                placeholder='Min Quantity'
+                placeholder='Minmum Quantity'
                 type="text"
                 autoComplete='off'
                 {...register("minimumOrderQuantity")}

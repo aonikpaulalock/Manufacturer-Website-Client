@@ -4,6 +4,9 @@
   cursor: pointer;
   margin-right: 8px;
 }
+.delete-1 {
+  font-size: 40px;
+}
 .admin {
   font-size: 35px;
   color: rgb(0, 181, 187);

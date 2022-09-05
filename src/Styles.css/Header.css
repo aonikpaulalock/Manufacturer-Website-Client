@@ -21,3 +21,11 @@
   padding: 0px 0 !important;
   color: var(--subText-primary-color) !important;
 }
+.logout {
+  font-size: 40px;
+  color: var(--primary-color);
+}
+.active-links {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
