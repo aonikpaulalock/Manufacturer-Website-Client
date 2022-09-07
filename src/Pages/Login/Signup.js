@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import image from "../../Asset/Login/login.png"
+import image from "../../Asset/Login/loginSignup.png"
 import "../../Styles.css/Login/Login.css"
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -10,7 +10,6 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import Loading from '../Shared/Loading';
 import useToken from '../../Hooks/useToken';
 const Signup = () => {
-
   const navigate = useNavigate()
   const location = useLocation()
   // Google Provider
@@ -49,7 +48,7 @@ const Signup = () => {
     <div className="container mx-auto my-10  px-8">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
         <div className="flex justify-center items-center">
-          <img src={image} alt="" />
+          <img src={image} alt="" className="p-6"/>
         </div>
         <div className="signup-content">
           <h1>Signup Your Account</h1>

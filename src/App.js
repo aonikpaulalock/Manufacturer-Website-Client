@@ -13,12 +13,15 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/Home/Home';
-import MyPortfolio from './Pages/Home/MyPortfolio';
+import Blogs from './Pages/Home/Blogs';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Login/Signup';
 import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
 import ToolsDetails from './Pages/ToolsDetails/ToolsDetails';
+import BlogsDetails from './Pages/Home/BlogsDetails';
+import Payment from './Pages/Dashboard/Payment';
+import RequireAuth from './Pages/Shared/RequireAuth';
 
 function App() {
   const [user] = useAuthState(auth)
@@ -27,12 +30,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/tools/:id" element={<ToolsDetails />}></Route>
-        <Route path="/portfolio" element={<MyPortfolio />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="/tools/:id" element={<RequireAuth><ToolsDetails /></RequireAuth>}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
+        <Route path="/blog/:id" element={<BlogsDetails />}></Route>
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<MyOrder />}></Route>
           <Route path="review" element={<AddReview />}></Route>
           <Route path="profile" element={<MyProfile />}></Route>
+          <Route path="payment/:id" element={<Payment/>}></Route>
           <Route path="users" element={<AllUsers />}></Route>
           <Route path="add" element={<AddProduct />}></Route>
           <Route path="products" element={<ManageProducts />}></Route>

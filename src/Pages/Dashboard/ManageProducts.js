@@ -39,17 +39,16 @@ const ManageProducts = () => {
   return (
     <div className="container mx-auto px-10">
       <div className="parts-heading my-4">
-        <h1>My Orders</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab ad neque! Eaque, officiis tempora.</p>
+        <h1>Manage Product</h1>
       </div>
-      <div className="shadow-2xl">
+      <div className="shadow-2xl mb-10">
         <div class="overflow-x-auto">
           <table class="w-full">
-            <thead className="border-b bg-[#292929]">
+            <thead className="border-b bg-[#3a3939">
               <tr className="">
                 <th className="font-semibold  text-center p-6 text-white">Index</th>
-                <th className="font-semibold text-center p-6 text-white">Name</th>
                 <th className="font-semibold  text-center p-6 text-white">Image</th>
+                <th className="font-semibold text-center p-6 text-white">Name</th>
                 <th className="font-semibold  text-center p-6 text-white">Price</th>
                 <th className="font-semibold text-center p-6 text-white">Manage</th>
               </tr>
@@ -58,14 +57,15 @@ const ManageProducts = () => {
               {
                 products.map((product, index) => <>
                   <tr className="border-0">
-                    <th className="font-medium text-center p-6 bg-[#333] text-white">{index + 1}</th>
+                    <th className="font-medium text-center p-6 text-[#fcca03] ">{index + 1}</th>
                     <td className="font-semibold text-lg text-center p-6 bg-[#333] text-white">
                       <div className="flex justify-center items-center">
                         <img src={product.img} alt="" className="w-20 h-16" />
                       </div>
                     </td>
-                    <td className="font-bold text-center p-6 bg-[#333] text-white text-xl">
+                    <td className="font-bold text-center p-6 text-white text-xl">
                       <div className="flex justify-center items-center">
+                        <Icon icon="bi:cart-check-fill" className="product mr-2" />
                         <h1>{product.name}</h1>
                       </div>
                     </td>
@@ -76,7 +76,7 @@ const ManageProducts = () => {
                         <p className="ml-3 mb-0 pt-2">{product.price}</p>
                       </div>
                     </td>
-                    <td className="font-medium text-center p-6 bg-[#333] text-white">
+                    <td className="font-medium text-center p-6 text-white">
                       <div className="flex items-center justify-center">
                         <Icon icon="ant-design:delete-filled" className="delete delete-1" onClick={() => handleDelete(product._id)} />
                       </div>

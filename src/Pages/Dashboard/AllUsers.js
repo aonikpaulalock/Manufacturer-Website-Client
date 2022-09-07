@@ -31,14 +31,13 @@ const AllUsers = () => {
   }
   return (
     <div className="container mx-auto px-10">
-      <div className="parts-heading my-4">
+      <div className="parts-heading my-5">
         <h1>All Users</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab ad neque! Eaque, officiis tempora.</p>
       </div>
       <div className="shadow-2xl">
         <div class="overflow-x-auto">
           <table class="w-full">
-            <thead className="border-b bg-[#292929]">
+            <thead className="border-b bg-[#3a3939]">
               <tr className="">
                 <th className="font-semibold  text-center p-6 text-white">Index</th>
                 <th className="font-semibold text-center p-6 text-white">Email</th>
@@ -49,22 +48,22 @@ const AllUsers = () => {
               {
                 users.map((user, index) => <>
                   <tr className="border-0">
-                    <th className="font-medium text-center p-6 bg-[#333] text-white">{index + 1}</th>
+                    <th className="font-medium text-center p-6  text-[#fcca03]">{index + 1}</th>
                     <td className="font-medium text-center p-6 bg-[#333] text-white">
                       <div className="flex justify-center items-center">
-                        <Icon icon="ic:round-email" className="text-2xl" />
+                        <Icon icon="ic:round-email" className="email-product" />
                         <p className="ml-3">{user.email}</p>
                       </div>
                     </td>
                     {
                       user.role === "admin" ?
-                      <td className="font-medium text-center p-6 bg-[#333] text-white">
+                      <td className="font-medium text-center p-6  text-white">
                           <div className="flex items-center justify-center">
                             <h1>Already Admin</h1>
                           </div>
                         </td>
                         :
-                        <td className="font-medium text-center p-6 bg-[#333] text-white">
+                        <td className="font-medium text-center p-6  text-white">
                           <div className="flex items-center justify-center">
                             <Icon icon="subway:admin-1" className='admin' onClick={handleMakeAdmin} />
                           </div>

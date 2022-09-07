@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
-import image from "../../Asset/Login/login.png"
+import image from "../../Asset/Login/loginSignup.png"
 import auth from '../../Firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import useToken from '../../Hooks/useToken';
@@ -46,7 +46,7 @@ const Login = () => {
     <div className="container mx-auto my-10  px-8">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
         <div className="signup-image">
-          <img src={image} alt="" />
+          <img src={image} alt="" className="p-6" />
         </div>
         <div className="signup-content">
           <h1>Signin Your Account</h1>
@@ -56,7 +56,7 @@ const Login = () => {
               <div className="facebook-icons">
                 <Icon className="fb-icon" icon="cib:facebook-f" />
               </div>
-              <div className="google-icons mx-4">
+              <div className="google-icons mx-4" onClick={() => signInWithGoogle()}>
                 <Icon className="g-icon" icon="ant-design:google-plus-outlined" />
               </div>
               <div className="github-icons">

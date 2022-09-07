@@ -41,3 +41,8 @@
   color: rgb(230, 230, 230);
   text-align: center;
 }
+@media (max-width:550px) {
+  .summery-container {
+    padding: 30px;
+  }
+}

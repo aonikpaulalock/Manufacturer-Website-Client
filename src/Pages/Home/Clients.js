@@ -5,15 +5,15 @@ import image3 from "../../Asset/Client-section/3.png"
 import image4 from "../../Asset/Client-section/4.png"
 const Clients = () => {
   return (
-    <div className="container mx-auto px-10 my-16 py-16">
+    <div className="container mx-auto md:px-10 px-5 md:my-16 my-8 md:py-16 py-8">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-10 cursor-pointer">
+        <div className="grid lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-4 sm:mt-10 mt-4 cursor-pointer md:order-1 order-2">
               <img src={image1} alt="" className="" />
               <img src={image2} alt="" className="" />
               <img src={image3} alt="" className="" />
               <img src={image4} alt="" className="" />
           </div>
-        <div className="why-choose-content">
+        <div className="why-choose-content md:order-2 order-1">
           <div className="">
             <h6>MAJOR AND BEST</h6>
             <h1>OUR CLIENTS</h1>

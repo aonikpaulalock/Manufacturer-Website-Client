@@ -5,7 +5,7 @@
   font-size: 37px;
   line-height: 55px;
   letter-spacing: 3px;
-  color: var(--sub-primary-color);
+  color: white;
   text-align: center;
 }
 .parts-heading p {
@@ -14,7 +14,7 @@
   font-weight: 400;
   font-size: 17px;
   line-height: 26px;
-  color: var(--subText-primary-color);
+  color: white;
   padding: 9px 0 ;
   text-align: center;
 }
@@ -26,6 +26,32 @@
   line-height: 35px;
   color: var(--sub-primary-color);
   padding: 8px 0;
+}
+.head {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--sub-primary-color);
+}
+.blog {
+  font-family: 'Inter', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: var(--subText-primary-color) !important;
+  padding: 8px 0 ;
+}
+.botom-border {
+  border-bottom: 5px solid var(--primary-color);
+  border-radius: 10px;
+}
+.read {
+  font-size: 25px;
+  color: var(--primary-color);
+  margin-left: 6px;
 }
 .card-content p {
   font-family: 'Inter', sans-serif;

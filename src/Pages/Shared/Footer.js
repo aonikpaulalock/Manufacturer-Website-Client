@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className="footer-container">
-      <div className="container mx-auto">
+      <div className="container mx-auto sm:px-10 px-12">
         <div className="grid md:grid-cols-3 grid-cols-1 gap-6 mb-8">
           <div className="footer-fast">
             <Link to="" class="flex items-center">
@@ -57,9 +57,9 @@ const Footer = () => {
         </div>
       </div>
       <hr className="footer-hr" />
-      <div className="container mx-auto pt-6">
+      <div className="container mx-auto pt-6 sm:px-10 px-8">
         <div className="md:flex md:justify-evenly md:items-center">
-          <Link to="" class="flex items-center md:order-2 order-1">
+          <Link to="" class="flex items-center md:order-2 order-1  sm:mb-0 mb-3">
             <img src={brand} alt="" className="w-16 h-16 mr-1" />
             <h1 className="brand-heading footer-brand">ENERGY</h1>
           </Link>

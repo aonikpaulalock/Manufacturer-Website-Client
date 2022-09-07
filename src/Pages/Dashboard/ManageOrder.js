@@ -10,13 +10,12 @@ const ManageOrder = () => {
   return (
     <div className="container mx-auto px-10">
       <div className="parts-heading my-4">
-        <h1>My Orders</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab ad neque! Eaque, officiis tempora.</p>
+        <h1>Manage Orders</h1>
       </div>
-      <div className="shadow-2xl">
+      <div className="shadow-2xl mb-10">
         <div class="overflow-x-auto">
           <table class="w-full">
-            <thead className="border-b bg-[#292929]">
+            <thead className="border-b bg-[#3a3939]">
               <tr className="">
                 <th className="font-semibold  text-center p-6 text-white">Index</th>
                 <th className="font-semibold text-center p-6 text-white">Email</th>
@@ -29,16 +28,16 @@ const ManageOrder = () => {
               {
                 orders.map((order, index) => <>
                   <tr className="border-0">
-                    <th className="font-medium text-center p-6 bg-[#333] text-white">{index + 1}</th>
+                    <th className="font-medium text-center p-6  text-[#fcca03]">{index + 1}</th>
                     <td className="font-medium text-center p-6 bg-[#333] text-white">
                       <div className="flex justify-center items-center">
-                        <Icon icon="ic:round-email" className="text-2xl" />
+                        <Icon icon="ic:round-email" className="email-product" />
                         <p className="ml-3">{order.email}</p>
                       </div>
                     </td>
-                    <td className="font-semibold text-lg text-center p-6 bg-[#333] text-white">
+                    <td className="font-semibold text-lg text-center p-6 text-white">
                       <div className="flex justify-center items-center">
-                        <Icon icon="gridicons:product-virtual" className="product" />
+
                         <p className="ml-3 mb-0 pt-1"> {order.productName}</p>
                       </div>
                     </td>
@@ -48,9 +47,15 @@ const ManageOrder = () => {
                         <p className="ml-3 mb-0 pt-2">{order.quantity}</p>
                       </div>
                     </td>
-                    <td className="font-medium text-center p-6 bg-[#333] text-white">
-                      <div className="flex items-center justify-center">
-                        <Icon icon="fluent:payment-32-filled" className="pay" />
+                    <td className="font-semibold text-lg text-center p-6 bg-[#333] text-white">
+                      <div className="flex justify-center items-center">
+                        {
+                          order.paid ?
+                          <button className="bg-[#fcca03] px-10 py-2  text-gray-700 font-semibold ">Shipping</button>
+                          :
+                          <button className="bg-gray-600 px-10 py-2  text-white font-semibold">Pending</button>
+                        }
+                       
                       </div>
                     </td>
                   </tr>

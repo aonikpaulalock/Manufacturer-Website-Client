@@ -5,7 +5,7 @@ const Tool = ({ tools }) => {
   const { _id, img, description, name, price } = tools;
   const navigate = useNavigate()
   return (
-    <div className="rounded shadow-lg">
+    <div className="rounded shadow-xl">
       <div className="w-full p-4 ">
         <div>
           <img src={img} alt="" className="px-6" />

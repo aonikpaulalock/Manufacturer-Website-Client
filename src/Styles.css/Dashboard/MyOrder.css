@@ -9,7 +9,7 @@
 }
 .admin {
   font-size: 35px;
-  color: rgb(0, 181, 187);
+  color: var(--primary-color);
   cursor: pointer;
 }
 .pay {
@@ -19,11 +19,13 @@
 }
 .quantity {
   font-size: 27px;
-  color: rgb(110, 154, 248);
-  cursor: pointer;
+  color: var(--primary-color);
 }
 .product {
   font-size: 27px;
-  color: rgb(110, 154, 248);
-  cursor: pointer;
+  color: var(--primary-color);
+}
+.email-product {
+  font-size: 27px;
+  color: var(--primary-color);
 }

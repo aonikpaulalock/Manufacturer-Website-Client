@@ -9,6 +9,17 @@
   text-align: center;
 }
 
+.reviews-content h2 {
+  font-family: 'Dela Gothic One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 58px;
+  letter-spacing: 4px;
+  color: var(--sub-primary-color);
+  text-align: center;
+}
+
 .reviews-content h5 {
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -42,6 +53,7 @@
   color: var(--text-primary-color);
   text-align: center;
 }
+
 .review-des {
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -49,4 +61,33 @@
   font-size: 18px;
   line-height: 30px;
   color: var(--subText-primary-color);
+}
+
+@media (max-width:550px) {
+  .reviews-content h1 {
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .reviews-content h5 {
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+  }
+}
+@media (max-width:370px) {
+  .reviews-content h1 {
+    font-size: 23px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .reviews-content h5 {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+  }
 }

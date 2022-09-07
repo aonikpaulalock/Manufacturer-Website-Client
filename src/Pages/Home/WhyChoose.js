@@ -9,7 +9,7 @@ const abouts = [
 
 const WhyChoose = () => {
   return (
-    <div className="container mx-auto px-10 my-14">
+    <div className="container mx-auto md:px-10 px-5 md:my-14 my-8">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
         <div className="why-choose-content">
           <div>
@@ -22,7 +22,7 @@ const WhyChoose = () => {
         <div className="why-choose-grid grid lg:grid-cols-2 sm:grid-cols-2 gap-6">
           {
             abouts.map(about =>
-              <div key={about.id} className="p-3 hover:shadow-lg cursor-pointer">
+              <div key={about.id} className="p-3 shadow-xl rounded cursor-pointer">
                 <div>
                   <img src={about.img} alt="" className="p-4" />
                 </div>

@@ -15,10 +15,10 @@ const Tools = () => {
     return <Loading />
   }
   return (
-    <div className="container mx-auto px-10 my-16 py-14">
-      <div className="parts-heading my-3">
-        <h1>Eco Friendly Parts</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab ad neque! Eaque, officiis tempora.</p>
+    <div className="container mx-auto md:px-10 px-5 md:my-16 my-8 md:py-14 py-8">
+    <div className="reviews-content my-6">
+        <h5>FEATURE OF</h5>
+        <h2>OUR TOOLS</h2>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         {

@@ -28,8 +28,24 @@
   color: rgb(136, 136, 136);
   padding: 20px 0;
 }
-
-.project-button:hover {
-  color: var(--primary-color) !important;
+.project-button {
+  font-family: 'Inter' ;
+  margin: 12px 0 0 0;
+  font-style: normal;
+  border: 0;
+  outline: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--primary-color);
+  padding:12px 33px;
+  background: transparent;
   border: 2px solid var(--primary-color) !important;
+  transition: all .8s linear 0s;
+  border-radius: 5px;
+}
+.project-button:hover {
+  background-color: var(--primary-color) ;
+  color: var(--text-primary-color);
 }

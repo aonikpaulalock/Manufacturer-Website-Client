@@ -9,7 +9,7 @@ const Reviews = () => {
     .then(data => setReviews(data))
   }, [])
   return (
-    <div className="container mx-auto px-10 my-16">
+    <div className="container mx-auto md:px-10 px-2 md:my-16 my-8">
       <div className="reviews-content my-6">
         <h5>WHAT PEOPLE SAY</h5>
         <h1>OUR TESTIMONIALS</h1>

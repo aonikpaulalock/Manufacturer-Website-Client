@@ -76,18 +76,25 @@
   border: none;
   margin: 10px auto;
   border-radius: 5px;
+  color: var(--text-primary-color);
 }
 .input-3 {
+  color: rgb(189, 189, 189) !important;
+  background-color: #353434 !important;
   margin-right: 10px !important;
-  padding: 25px 40px;
+  padding: 25px 30px;
 }
 .input-4 {
-  padding: 25px 40px;
+  padding: 25px 30px;
+  background-color: #353434 !important;
+  color: rgb(189, 189, 189) !important;
 }
 .input-feild:focus {
   outline: none;
 }
 .input-feild-2 {
+  color: rgb(189, 189, 189) !important;
+  background-color: #353434 !important;
   width: 92%
 }
 
@@ -141,4 +148,19 @@
 
 .link-color {
   color: rgb(66 103 178);
+}
+@media (max-width:700px) {
+  .input-feild {
+    width: 95%;
+    margin: 7px auto;
+  }
+  .input-feild-2 {
+    width: 100% !important ;
+  }
+  .input-3 {
+    width: 100% !important;
+  }
+  .input-4 {
+    width: 100% !important;
+  }
 }

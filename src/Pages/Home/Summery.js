@@ -10,7 +10,7 @@ const summerys = [
 const Summery = () => {
   return (
     <div className="summery-container my-12 pb-8">
-      <div className="container mx-auto px-10">
+      <div className="container mx-auto md:px-10 px-4">
         <div className="summery-heading mb-8">
           <h1>Summery</h1>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, totam?</p>

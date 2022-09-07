@@ -5,14 +5,16 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
+import { useNavigate } from 'react-router-dom';
 const MyOrder = () => {
+  const navigate = useNavigate()
   const [user] = useAuthState(auth)
   const [orders, setOrders] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:4000/order?email=${user.email}`)
+    fetch(`http://localhost:4000/order?email=${user?.email}`)
       .then(res => res.json())
       .then(data => setOrders(data))
-  }, [])
+  }, [user?.email])
   const handleDelete = async (id) => {
     Swal.fire({
       title: 'Are you sure deleted item ?',
@@ -39,16 +41,16 @@ const MyOrder = () => {
       }
     })
   }
+
   return (
-    <div className="container mx-auto px-10">
+    <div className="container mx-auto px-4">
       <div className="parts-heading my-4">
         <h1>My Orders</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab ad neque! Eaque, officiis tempora.</p>
       </div>
       <div className="shadow-2xl">
         <div class="overflow-x-auto">
           <table class="w-full">
-            <thead className="border-b bg-[#292929]">
+            <thead className="border-b bg-[#3a3939]">
               <tr className="">
                 <th className="font-semibold  text-center p-6 text-white">Index</th>
                 <th className="font-semibold text-center p-6 text-white">Email</th>
@@ -61,14 +63,14 @@ const MyOrder = () => {
               {
                 orders.map((order, index) => <>
                   <tr className="border-0">
-                    <th className="font-medium text-center p-6 bg-[#333] text-white">{index + 1}</th>
+                    <th className="font-medium text-center p-6 text-[#fcca03] ">{index + 1}</th>
                     <td className="font-medium text-center p-6 bg-[#333] text-white">
                       <div className="flex justify-center items-center">
-                        <Icon icon="ic:round-email" className="text-2xl" />
-                        <p className="ml-3">{order.email}</p>
+                        <Icon icon="ic:round-email" className="email-product" />
+                        <p className="ml-3">{order?.email}</p>
                       </div>
                     </td>
-                    <td className="font-semibold text-lg text-center p-6 bg-[#333] text-white">
+                    <td className="font-semibold text-lg text-center p-6 text-white">
                       <div className="flex justify-center items-center">
                         <Icon icon="gridicons:product-virtual" className="product" />
                         <p className="ml-3 mb-0 pt-1"> {order.productName}</p>
@@ -80,10 +82,20 @@ const MyOrder = () => {
                         <p className="ml-3 mb-0 pt-2">{order.quantity}</p>
                       </div>
                     </td>
-                    <td className="font-medium text-center p-6 bg-[#333] text-white">
+                    <td className="font-medium p-2 text-white text-center">
                       <div className="flex items-center justify-center">
-                        <Icon icon="ant-design:delete-filled" className="delete" onClick={() => handleDelete(order._id)} />
-                        <Icon icon="fluent:payment-32-filled" className="pay" />
+                        {(order.price && order.paid) ? <div>
+                          <button className="bg-cyan-500 px-10 py-2  text-white font-bold ">Paid</button>
+                          <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
+                        </div>
+                          :
+                          <Icon icon="ant-design:delete-filled" className="delete" onClick={() => handleDelete(order._id)} />
+                        }
+
+                        {
+                          (order.price && !order.paid) &&
+                          <Icon icon="fluent:payment-32-filled" className="pay" onClick={() => navigate(`payment/${order._id}`)} />
+                        }
                       </div>
                     </td>
                   </tr>

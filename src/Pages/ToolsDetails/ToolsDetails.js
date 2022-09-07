@@ -26,9 +26,10 @@ const ToolsDetails = () => {
     const order = {
       name: user?.displayName,
       email: user?.email,
-      price: details.perPrice,
+      price: details.price,
       quantity,
-      productName: details.name
+      productName: details.name,
+      img: details.img
 
     }
     await axios.post("http://localhost:4000/orders", order)
@@ -41,9 +42,9 @@ const ToolsDetails = () => {
   }
   return (
     <div className="container mx-auto my-14">
-      <div className="parts-heading my-4">
-        <h1>Order Details</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab ad neque! Eaque, officiis tempora.</p>
+    <div className="reviews-content my-6">
+        <h5>FEATURE OF</h5>
+        <h2>OUR  TOOLS DETAILS</h2>
       </div>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
         <div>
@@ -85,14 +86,14 @@ const ToolsDetails = () => {
             <input
               readOnly
               placeholder={user?.displayName}
-              className="input-feild shadow-md"
+              className="input-feild shadow-xl"
             />
           </div>
 
           <div className="form-control">
             <input
               placeholder={user?.email}
-              className="input-feild shadow-md"
+              className="input-feild shadow-xl"
               readOnly
             />
           </div>
@@ -100,13 +101,13 @@ const ToolsDetails = () => {
             <input
               placeholder={` ${details.name} Available-Quantity : ${details.availableQuantity} Pices`}
               readOnly
-              className="input-feild shadow-md"
+              className="input-feild shadow-xl"
             />
           </div>
           <div className="form-control">
             <input
               placeholder={`Minimum-Order-Quantity : ${details.minimumOrderQuantity} Pices`}
-              className="input-feild shadow-md"
+              className="input-feild shadow-xl"
               {...register("min_order", {
                 required: {
                   value: true,
@@ -142,7 +143,7 @@ const ToolsDetails = () => {
             <input
               placeholder={` $${details.price} `}
               readOnly
-              className="input-feild shadow-md"
+              className="input-feild shadow-xl"
             />
           </div>
           <div class="mx-auto w-10/12 mt-4">
