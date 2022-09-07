@@ -1,0 +1,28 @@
+.notfound-content h1 {
+  font-family: 'Dela Gothic One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 62px;
+  letter-spacing: 4px;
+  color: var(--text-primary-color);
+}
+.notfound-content span {
+  color: rgb(163, 24, 24) ;
+}
+.notfound-content p{
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--subText-primary-color);
+  padding: 18px 0 !important;
+}
+
+@media (max-width:550px) {
+  .notfound-content h1{
+    font-size: 32px;
+    line-height: 45px;
+  }
+}

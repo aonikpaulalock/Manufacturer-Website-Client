@@ -18,7 +18,7 @@ const Summery = () => {
         <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
           {
             summerys.map(summery =>
-              <div className="summery-content">
+              <div key={summery.id} className="summery-content">
                 <h1>{summery.number}</h1>
                 <h6>{summery.name}</h6>
               </div>

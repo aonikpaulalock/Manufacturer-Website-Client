@@ -69,7 +69,7 @@ const MyProfile = () => {
             />
 
             <div className="md:w-11/12 w-full md:mt-3 md:mb-0 mt-2 mb-4">
-              <button class="project-button w-full shadow-xl">Update - Profile</button>
+              <button className="project-button w-full shadow-xl">Update - Profile</button>
             </div>
           </form>
         </div>

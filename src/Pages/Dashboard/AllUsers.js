@@ -35,8 +35,8 @@ const AllUsers = () => {
         <h1>All Users</h1>
       </div>
       <div className="shadow-2xl">
-        <div class="overflow-x-auto">
-          <table class="w-full">
+        <div className="overflow-x-auto">
+          <table className="w-full">
             <thead className="border-b bg-[#3a3939]">
               <tr className="">
                 <th className="font-semibold  text-center p-6 text-white">Index</th>

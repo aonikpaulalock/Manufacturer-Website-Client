@@ -30,12 +30,12 @@ const Payment = () => {
   return (
     <div className="container mx-auto lg:my-48">
       <div className="grid md:grid-cols-2 grid-cold-1 gap-8 px-10">
-        <div class="card card-side bg-[#353434] shadow-xl py-2">
+        <div className="card card-side bg-[#353434] shadow-xl py-2">
           <figure>
             <img src={orders.img} alt="Movie" className="w-40 h-40" />
           </figure>
-          <div class="card-body">
-            <h2 class=" text-white font-semibold text-['Inter'] text-2xl">{orders.productName}</h2>
+          <div className="card-body">
+            <h2 className=" text-white font-semibold text-['Inter'] text-2xl">{orders.productName}</h2>
             <p className="flex items-center text-white text-xl my-2">
               <Icon icon="bi:bag-plus-fill" className="quantity mr-2 mb-2" />
               {orders.quantity}
@@ -46,8 +46,8 @@ const Payment = () => {
             </h2>
           </div>
         </div>
-        <div class="card flex-shrink-0 bg-[#353434] shadow-xl py-2">
-          <div class="card-body">
+        <div className="card flex-shrink-0 bg-[#353434] shadow-xl py-2">
+          <div className="card-body">
             <Elements stripe={stripePromise}>
               <CheckoutForm orders={orders} />
             </Elements>

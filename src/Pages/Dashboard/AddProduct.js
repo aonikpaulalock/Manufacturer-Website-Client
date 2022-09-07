@@ -80,7 +80,7 @@ const AddProduct = () => {
               {...register("img")}
             />
             <div className="md:w-11/12 w-full md:mt-3 md:mb-0 mt-2 mb-7">
-              <button class="project-button w-full">Add Product</button>
+              <button className="project-button w-full">Add Product</button>
             </div>
           </form>
         </div>

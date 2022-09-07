@@ -22,6 +22,8 @@ import ToolsDetails from './Pages/ToolsDetails/ToolsDetails';
 import BlogsDetails from './Pages/Home/BlogsDetails';
 import Payment from './Pages/Dashboard/Payment';
 import RequireAuth from './Pages/Shared/RequireAuth';
+import RequireAdmin from './Pages/Shared/RequireAdmin';
+import Notfound from './Pages/Shared/Notfound';
 
 function App() {
   const [user] = useAuthState(auth)
@@ -38,13 +40,14 @@ function App() {
           <Route path="review" element={<AddReview />}></Route>
           <Route path="profile" element={<MyProfile />}></Route>
           <Route path="payment/:id" element={<Payment/>}></Route>
-          <Route path="users" element={<AllUsers />}></Route>
-          <Route path="add" element={<AddProduct />}></Route>
-          <Route path="products" element={<ManageProducts />}></Route>
-          <Route path="orders" element={<ManageOrder />}></Route>
+          <Route path="users" element={<RequireAdmin><AllUsers /></RequireAdmin>}></Route>
+          <Route path="add" element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
+          <Route path="products" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
+          <Route path="orders" element={<RequireAdmin><ManageOrder /></RequireAdmin>}></Route>
         </Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="*" element={<Notfound />}></Route>
       </Routes>
       <Footer />
       <ToastContainer />

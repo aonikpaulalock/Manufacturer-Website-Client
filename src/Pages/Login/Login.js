@@ -64,13 +64,13 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <div class="divider mt-8 md:px-16">OR</div>
+          <div className="divider mt-8 md:px-16">OR</div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control">
+            <div className="form-control">
               <input type="email"
                 autoComplete='off'
                 placeholder="Enter Email"
-                class="input-feild shadow-md"
+                className="input-feild shadow-md"
                 {...register("email",
                   {
                     required: {
@@ -84,16 +84,16 @@ const Login = () => {
                   })}
               />
               <Icon className="position-email" icon="clarity:email-outline-alerted" />
-              <label class="text-center text-lg">
-                {errors.email?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
-                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
+              <label className="text-center text-lg">
+                {errors.email?.type === 'required' && <span className="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
+                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-400 font-semibold text-md">{errors.email?.message}</span>}
               </label>
             </div>
-            <div class="form-control">
+            <div className="form-control">
               <input type="password"
                 autoComplete='off'
                 placeholder="Enter Password"
-                class="input-feild shadow-md"
+                className="input-feild shadow-md"
                 {...register("password",
                   {
                     required: {
@@ -107,14 +107,14 @@ const Login = () => {
                   })}
               />
               <Icon className="position-password" icon="ri:lock-password-fill" />
-              <label class="text-center text-lg">
-                {errors.password?.type === 'required' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
-                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
+              <label className="text-center text-lg">
+                {errors.password?.type === 'required' && <span className="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
+                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-400 font-semibold text-md">{errors.password?.message}</span>}
               </label>
               <h6 className="text-center font-medium">{errorFirebase}</h6>
             </div>
             <div className="mx-auto w-10/12 mt-6">
-              <button type="submit" class="signup-button flex justify-center items-center">Signin</button>
+              <button type="submit" className="signup-button flex justify-center items-center">Signin</button>
               <p className="text-center font-medium mt-3 cursor-pointer text-md">Forget Password ?</p>
               <p className="acount"> Register Your Account ? <Link className='link-color' to="/signup">Please Signup</Link></p>
             </div>

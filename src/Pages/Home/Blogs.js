@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 const Blogs = () => {
   const navigate = useNavigate()
-  const [blogs, setBlogs] = useState()
+  const [blogs, setBlogs] = useState([]);
+  console.log(blogs);
   useEffect(() => {
     fetch("http://localhost:4000/blogs")
       .then(res => res.json())
