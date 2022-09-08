@@ -11,7 +11,7 @@ const MyOrder = () => {
   const [user] = useAuthState(auth)
   const [orders, setOrders] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:4000/order?email=${user?.email}`)
+    fetch(`https://manu-project-server.vercel.app/order?email=${user?.email}`)
       .then(res => res.json())
       .then(data => setOrders(data))
   }, [user?.email])
@@ -26,7 +26,7 @@ const MyOrder = () => {
       confirmButtonText: 'Yes, Delete it'
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4000/order/${id}`
+        const url = `https://manu-project-server.vercel.app/order/${id}`
         axios
           .delete(url)
           .then(response => {

@@ -5,7 +5,7 @@ import image from "../../Asset/Project/addProduct.png"
 const AddProduct = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const onSubmit = data => {
-    const url = "http://localhost:4000/tools";
+    const url = "https://manu-project-server.vercel.app/tools";
     fetch(url, {
       method: "POST",
       headers: {

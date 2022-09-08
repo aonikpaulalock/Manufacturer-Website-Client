@@ -3,27 +3,25 @@ import { Icon } from '@iconify/react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 import { toast } from 'react-toastify';
+import Loading from '../Shared/Loading';
+import { useQuery } from 'react-query';
 const AllUsers = () => {
   const [user] = useAuthState(auth)
-  const [users, setUsers] = useState([])
-  useEffect(() => {
-    fetch("http://localhost:4000/users")
-      .then(res => res.json())
-      .then(data => setUsers(data))
-  }, [])
-
+  const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://manu-project-server.vercel.app/users', {
+    method: 'GET',
+  }).then(res => res.json()));
+  if (isLoading) {
+    return <Loading></Loading>
+  }
   // Make Admin
   const handleMakeAdmin = () => {
-    fetch(`http://localhost:4000/user/admin/${user.email}`, {
+    fetch(`https://manu-project-server.vercel.app/user/admin/${user.email}`, {
       method: 'PUT',
-      // headers: {
-      //   authorization: `Bearer ${localStorage.getItem('accessToken')}`
-      // }
     })
-      .then(res => { return res.json() })
+      .then(res => res.json())
       .then(data => {
         if (data.modifiedCount > 0) {
-          // refetch();
+          refetch();
           toast.success(`Successfully made an admin`);
         }
         console.log(data);
@@ -55,20 +53,15 @@ const AllUsers = () => {
                         <p className="ml-3">{user.email}</p>
                       </div>
                     </td>
-                    {
-                      user.role === "admin" ?
                       <td className="font-medium text-center p-6  text-white">
                           <div className="flex items-center justify-center">
-                            <h1>Already Admin</h1>
+                            {
+                              (user.role === "admin") ? <h1>Already Admin</h1>
+                              :
+                              <Icon icon="subway:admin-1" className='admin' onClick={handleMakeAdmin} />
+                            }
                           </div>
                         </td>
-                        :
-                        <td className="font-medium text-center p-6  text-white">
-                          <div className="flex items-center justify-center">
-                            <Icon icon="subway:admin-1" className='admin' onClick={handleMakeAdmin} />
-                          </div>
-                        </td>
-                    }
                   </tr>
                 </>)
               }

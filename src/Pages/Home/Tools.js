@@ -7,7 +7,7 @@ import Tool from './Tool';
 const Tools = () => {
   const [tools, setTools] = useState([])
   const { data, isLoading } = useQuery('/tools', () =>
-    axios.get("http://localhost:4000/tools").then(response => {
+    axios.get("https://manu-project-server.vercel.app/tools").then(response => {
       setTools(response.data)
     })
   )

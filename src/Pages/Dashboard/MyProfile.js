@@ -5,7 +5,7 @@ import image from "../../Asset/Project/update.png"
 const MyProfile = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const onSubmit = data => {
-    const url = "http://localhost:4000/profile"
+    const url = "https://manu-project-server.vercel.app/profile"
     fetch(url, {
       method: "POST",
       headers: {

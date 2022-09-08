@@ -13,7 +13,7 @@ const ToolsDetails = () => {
   const { register, formState: { errors }, handleSubmit, watch, reset } = useForm();
   const { id } = useParams();
   const { data, isLoading } = useQuery('/tool', () =>
-    axios.get(`http://localhost:4000/tool/${id}`).then(response => {
+    axios.get(`https://manu-project-server.vercel.app/tool/${id}`).then(response => {
       setDetails(response.data)
     })
   )
@@ -32,7 +32,7 @@ const ToolsDetails = () => {
       img: details.img
 
     }
-    await axios.post("http://localhost:4000/orders", order)
+    await axios.post("https://manu-project-server.vercel.app/orders", order)
       .then((response) => {
         if (response.data.insertedId) {
           toast(`Your ${details.name} Ordered Successfully`)

@@ -11,7 +11,7 @@ const CheckoutForm = ({orders}) => {
   const elements = useElements();
   const { _id, price, email, productName } = orders;
   useEffect(() => {
-    fetch('http://localhost:4000/create-payment-intent', {
+    fetch('https://manu-project-server.vercel.app/create-payment-intent', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -76,7 +76,7 @@ const CheckoutForm = ({orders}) => {
         order: _id,
         transactionId: paymentIntent.id
       }
-      fetch(`http://localhost:4000/orders/${_id}`, {
+      fetch(`https://manu-project-server.vercel.app/orders/${_id}`, {
         method: 'PATCH',
         headers: {
           'content-type': 'application/json',

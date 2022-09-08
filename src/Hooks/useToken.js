@@ -6,7 +6,7 @@ const useToken = (user) =>{
         const email = user?.user?.email;
         const currentUser = {email: email};
         if(email){
-            fetch(`http://localhost:4000/users/${email}`, {
+            fetch(`https://manu-project-server.vercel.app/users/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'

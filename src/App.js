@@ -39,11 +39,11 @@ function App() {
           <Route index element={<MyOrder />}></Route>
           <Route path="review" element={<AddReview />}></Route>
           <Route path="profile" element={<MyProfile />}></Route>
-          <Route path="payment/:id" element={<Payment/>}></Route>
-          <Route path="users" element={<RequireAdmin><AllUsers /></RequireAdmin>}></Route>
-          <Route path="add" element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
-          <Route path="products" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
-          <Route path="orders" element={<RequireAdmin><ManageOrder /></RequireAdmin>}></Route>
+          <Route path="payment/:id" element={<Payment />}></Route>
+          <Route path="users" element={<AllUsers />}></Route>
+          <Route path="add" element={<AddProduct />}></Route>
+          <Route path="products" element={<ManageProducts />}></Route>
+          <Route path="orders" element={<ManageOrder />}></Route>
         </Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>

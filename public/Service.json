@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        
         "minimumOrderQuantity": "30",
         "availableQuantity": "70",
         "price": "100.00",
@@ -9,7 +9,7 @@
         "img": "https://i.ibb.co/YD3vw3J/Tools-1.jpg"
     },
     {
-        "id": 2,
+        
         "minimumOrderQuantity": "20",
         "availableQuantity": "50",
         "price": "120.00",
@@ -18,7 +18,7 @@
         "img": "https://i.ibb.co/KKGKFHQ/Tools-2.jpg"
     },
     {
-        "id": 3,
+        
         "minimumOrderQuantity": "40",
         "availableQuantity": "80",
         "price": "200.00",
@@ -27,7 +27,7 @@
         "img": "https://i.ibb.co/zrJqwkM/Tools-3.jpg"
     },
     {
-        "id": 4,
+        
         "minimumOrderQuantity": "50",
         "availableQuantity": "100",
         "price": "100.00",
@@ -36,7 +36,7 @@
         "img": "https://i.ibb.co/R0PkPxk/Tools-4.jpg"
     },
     {
-        "id": 5,
+        
         "minimumOrderQuantity": "50",
         "availableQuantity": "90",
         "price": "80.00",
@@ -45,7 +45,7 @@
         "img": "https://i.ibb.co/XWdhHn0/Tools-5.png"
     },
     {
-        "id": 6,
+        
         "minimumOrderQuantity": "30",
         "availableQuantity": "80",
         "price": "100.00",
@@ -54,7 +54,7 @@
         "img": "https://i.ibb.co/yR28L6y/Tools-6.jpg"
     },
     {
-        "id": 7,
+        
         "minimumOrderQuantity": "40",
         "availableQuantity": "90",
         "name": "S-Works Tarmac",
@@ -63,7 +63,7 @@
         "img": "https://i.ibb.co/7KWJx67/Tools-7.png"
     },
     {
-        "id": 8,
+        
         "minimumOrderQuantity": "20",
         "availableQuantity": "60",
         "price": "150.00",
@@ -72,7 +72,7 @@
         "img": "https://i.ibb.co/1qPG3XB/Tools-8.png"
     },
     {
-        "id": 9,
+        
         "minimumOrderQuantity": "70",
         "availableQuantity": "100",
         "price": "180.00",

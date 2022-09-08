@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const ManageProducts = () => {
   const [products, setProducts] = useState([])
   useEffect(() => {
-    fetch("http://localhost:4000/tools")
+    fetch("https://manu-project-server.vercel.app/tools")
       .then(res => res.json())
       .then(data => setProducts(data))
   }, [])
@@ -21,7 +21,7 @@ const ManageProducts = () => {
       confirmButtonText: 'Yes, Delete it'
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4000/order/${id}`
+        const url = `https://manu-project-server.vercel.app/order/${id}`
         axios
           .delete(url)
           .then(response => {

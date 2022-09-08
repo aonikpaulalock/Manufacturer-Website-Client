@@ -6,7 +6,7 @@ const useAdmin = user => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`http://localhost:4000/user/${email}`, {
+      fetch(`https://manu-project-server.vercel.app/user/${email}`, {
         method: 'GET',
         // headers: {
         //   'content-type': 'application/json',
