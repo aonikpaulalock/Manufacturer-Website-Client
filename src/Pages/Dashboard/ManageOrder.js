@@ -21,7 +21,7 @@ const ManageOrder = () => {
                 <th className="font-semibold text-center p-6 text-white">Email</th>
                 <th className="font-semibold  text-center p-6 text-white">Order</th>
                 <th className="font-semibold text-center p-6 text-white">Quantity</th>
-                <th className="font-semibold text-center p-6 text-white">Manage</th>
+                <th className="font-semibold text-center p-6 text-white">Price</th>
               </tr>
             </thead>
             <tbody>
@@ -51,7 +51,7 @@ const ManageOrder = () => {
                       <div className="flex justify-center items-center">
                         {
                           order.paid ?
-                          <button className="bg-[#fcca03] px-10 py-2  text-gray-700 font-semibold ">Shipping</button>
+                          <button className="bg-[#fcca03] px-10 py-2  text-gray-700 font-semibold ">Paid</button>
                           :
                           <button className="bg-gray-600 px-10 py-2  text-white font-semibold">Pending</button>
                         }

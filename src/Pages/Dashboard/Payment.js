@@ -9,7 +9,7 @@ import {
   CardElement,
   Elements,
   useStripe,
-  useElements,
+  useElements
 } from '@stripe/react-stripe-js';
 const stripePromise = loadStripe('pk_test_51L0ljcEIu4r15ToPEZO1QRyCh11qTJ2mq0OULDaY0ss3g41U19AcGpC1QesbBFzTLxNS0b0OvWxcLZlT1OBPzDmm00sbztt6gV');
 const Payment = () => {
