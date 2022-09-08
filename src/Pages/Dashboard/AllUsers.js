@@ -1,31 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { Icon } from '@iconify/react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../Firebase.init';
-import { toast } from 'react-toastify';
+import React from 'react';
 import Loading from '../Shared/Loading';
 import { useQuery } from 'react-query';
+import UserAdmin from './UserAdmin';
 const AllUsers = () => {
-  const [user] = useAuthState(auth)
-  const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://manu-project-server.vercel.app/users', {
-    method: 'GET',
-  }).then(res => res.json()));
-  if (isLoading) {
-    return <Loading></Loading>
-  }
-  // Make Admin
-  const handleMakeAdmin = () => {
-    fetch(`https://manu-project-server.vercel.app/user/admin/${user.email}`, {
-      method: 'PUT',
+  const { data: users, isLoading, refetch } = useQuery(
+    "users", () =>
+    fetch('https://manu-project-server.vercel.app/users', {
+      method: 'GET',
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data.modifiedCount > 0) {
-          refetch();
-          toast.success(`Successfully made an admin`);
-        }
-        console.log(data);
-      })
+    .then(res => res.json()));
+
+  if (isLoading) {
+    return <Loading />
   }
   return (
     <div className="container mx-auto px-10">
@@ -44,26 +30,14 @@ const AllUsers = () => {
             </thead>
             <tbody>
               {
-                users.map((user, index) => <>
-                  <tr className="border-0">
-                    <th className="font-medium text-center p-6  text-[#fcca03]">{index + 1}</th>
-                    <td className="font-medium text-center p-6 bg-[#333] text-white">
-                      <div className="flex justify-center items-center">
-                        <Icon icon="ic:round-email" className="email-product" />
-                        <p className="ml-3">{user.email}</p>
-                      </div>
-                    </td>
-                      <td className="font-medium text-center p-6  text-white">
-                          <div className="flex items-center justify-center">
-                            {
-                              (user.role === "admin") ? <h1>Already Admin</h1>
-                              :
-                              <Icon icon="subway:admin-1" className='admin' onClick={handleMakeAdmin} />
-                            }
-                          </div>
-                        </td>
-                  </tr>
-                </>)
+                users.map((user, index) =>
+                  <UserAdmin
+                    key={user._id}
+                    user={user}
+                    index={index}
+                    refetch={refetch}
+                  ></UserAdmin>
+                )
               }
             </tbody>
           </table>
