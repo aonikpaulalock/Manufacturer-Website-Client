@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+## Solar Manufacturer Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Demo
+# https://full-stack-project-2.web.app/
+
+ ## Feature
+
+ * This is a Full-Stack Solar Manufacturing Website.
+ * Users need to login via Email and Password or Google(
+also can create an account ).
+ * Have an admin and user dashboard Admin can delete, add
+and manage all services and normal users see all products
+& can order.
+
+## Technology
+# Client Side
+* React
+* React-Router-Dom
+* Tailwind
+* DaisyUI
+* Firebase
+* Axios
+* Toastify
+* SweetAlert
+* Stripe
+
+## Server Side
+ * Node
+ * Express
+ * Mongodb
+
 
 ## Available Scripts
 

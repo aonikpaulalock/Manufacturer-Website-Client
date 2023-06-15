@@ -2,16 +2,19 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import "../../Styles.css/Login/Login.css"
 const CheckoutForm = ({orders}) => {
+  const stripe = useStripe()
+  const elements = useElements();
   const [cardError, setCardError] = useState("")
   const [success, setSuccess] = useState("")
   const [clientSecret, setClientSecret] = useState('');
+  console.log(clientSecret);
   const [transactionId, setTransactionId] = useState('');
   const [processing, setProcessing] = useState(false);
-  const stripe = useStripe()
-  const elements = useElements();
   const { _id, price, email, productName } = orders;
+  console.log(orders)
   useEffect(() => {
-    fetch('https://manu-project-server.vercel.app/create-payment-intent', {
+    // https://manu-project-server.vercel.app/create-payment-intent
+    fetch('http://localhost:4000/create-payment-intent', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -22,7 +25,7 @@ const CheckoutForm = ({orders}) => {
       .then(res => res.json())
       .then(data => {
         if (data?.clientSecret) {
-          setClientSecret(data.clientSecret);
+          setClientSecret(data?.clientSecret);
         }
       });
 
@@ -100,7 +103,6 @@ const CheckoutForm = ({orders}) => {
             style: {
               base: {
                 fontSize: '16px',
-                margin:"19px",
                 color: 'white',
                 '::placeholder': {
                   color: '#aab7c4',
@@ -123,7 +125,6 @@ const CheckoutForm = ({orders}) => {
         success &&
         <div className="">
           <p className='text-green-500 font-medium pb-2 mt-4 text-center'>{success}</p>
-          {/* <p className='text-accent font-medium'>Your transaction id <span className="text-orange-300 font-bold"> {transactionId}</span> </p> */}
         </div>
       }
     </>
